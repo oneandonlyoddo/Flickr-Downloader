@@ -12,6 +12,7 @@ from flickrapi import FlickrAPI
 import requests
 import os
 import sys
+import time
 
 def get_urls(image_tag,max_amount, key, secret):
     flickr = FlickrAPI(key, secret)
@@ -49,6 +50,7 @@ def download_images(urls, output_folder):
                 outfile.write(response.content)
                 outfile.close()
                 print("Done downloading {} of {}".format(idx, len(urls)))
+                time.sleep(5.0) # waiting for 5 seconds to avoid being limited or temporarily blocked
             else:
                 print("Skipped {} because it already exists".format(idx, len(urls)))
         except:
