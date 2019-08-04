@@ -1,4 +1,4 @@
-# A Flickr Image Downloader
+# A python 3 Flickr Image Downloader
 In order to use this you will need to obtain an API key and secret from Flickr.
 
 This can be done here: <https://www.flickr.com/services/apps/create/>.
