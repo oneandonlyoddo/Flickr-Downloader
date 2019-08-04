@@ -15,13 +15,13 @@ Please keep in mind and respect the respective licenses for the images.
 
 ### Usage:
 
-```py
+```bash
 python flickrDownloader [search term] [max amount of images] [output folder]
 ```
 
 e.g.:
 
-```python
+```bash
 python flickrDownloader "bird" 100 "./birds"
 ```
 
