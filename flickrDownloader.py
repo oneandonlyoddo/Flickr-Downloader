@@ -1,11 +1,3 @@
-'''
-To do:
-timer to get around rate limiting
-change variable names
-write readme
-make a requirements.txt
-push to github
-'''
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from flickrapi import FlickrAPI
@@ -15,6 +7,8 @@ import sys
 import time
 
 def get_urls(image_tag,max_amount, key, secret):
+    # using the flickr api library to get the urls for returned images
+    
     flickr = FlickrAPI(key, secret)
     images = flickr.walk(text=image_tag, tag_mode='all', tags=image_tag, extras='url_o', per_page=50, sort='relevance')
     count = 0
@@ -37,6 +31,8 @@ def get_urls(image_tag,max_amount, key, secret):
     return urls
 
 def download_images(urls, output_folder):
+    # downloading images from a list of urls
+
     if not os.path.isdir(output_folder):
         os.mkdir(output_folder)
 
@@ -58,6 +54,8 @@ def download_images(urls, output_folder):
     print("Done.") 
 
 def get_keys_from_file(path):
+    # reading the flickr api keys from a .txt file 
+
     f = open(path, "r")
     lines = f.readlines()
     key = lines[0].strip()
